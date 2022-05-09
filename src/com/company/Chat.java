@@ -45,6 +45,18 @@ public class Chat extends JFrame{
                 sendMessage(messageField.getText());
             }
         });
-        
+        bottomPanel.add(messageField);
+        bottomPanel.add(sendButton);
+
+        container.add(basicPanel, BorderLayout.CENTER);
+        container.add(bottomPanel, BorderLayout.SOUTH);
+
+        setVisible(true);
+    }
+
+    private void sendMessage(String message) {
+        messagesArea.append(message + "\n");
+        messageField.setText("");
+
     }
 }
